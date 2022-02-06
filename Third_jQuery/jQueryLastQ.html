@@ -1,0 +1,36 @@
+</html>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>スライド</title>
+   
+</head>
+<body>
+  <input id="target" type="text"/>
+  <button>取得</button>
+  <ul></ul>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+     const url = 'https://api.github.com/search/repositories?q=';
+
+          // ここにjQueryを記述する
+        $('button').on('click', () => {
+          
+        $.ajax({
+        url:url + $('#target').val(),
+        dataType:"json",
+      })
+      
+      
+      
+      .done(data => {
+        console.log(data)
+      })
+    })
+
+    
+</script>
+</body>
+</html>

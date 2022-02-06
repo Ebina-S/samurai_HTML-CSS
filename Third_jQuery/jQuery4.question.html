@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+   <meta charset="utf-8">
+    <title>jQueryの練習</title>
+   
+  </head>
+ <body>
+      <ul></ul>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    const lang = ['windows','Mac OS','Linux', 'iOS', 'Android'];
+
+      lang.forEach( element => {
+
+             const list = $('<li>',{
+             text: (element)
+              });
+             
+              $('ul').append(list);
+
+     });
+
+       
+ </script>
+</body>
+</html>

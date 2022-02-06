@@ -1,0 +1,71 @@
+</html>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>ポップアップ</title>
+   <style>
+      img {
+        width: 10px;
+        opacity: 0;
+      }
+      .popup {
+  /*メッセージのコンテンツを中央に配置する*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /*半透明の黒背景にする*/
+  height: 100vh;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+
+  /*画面がスクロールしないように固定する*/
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/*メッセージのコンテンツ部分*/
+.content {
+  background: rgba(255,255,255,1);
+  padding: 30px;
+  width: 50%;
+}
+  </style>
+</head>
+<body>
+  
+  
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <button id="open">表示</button>
+  <div class="popup">
+    <div class="content">
+      <p>これはポップアップウィンドウです。「閉じる」ボタンでウィンドウが閉じます</p>
+      <button id="close">閉じる</button>
+    </div>
+  </div>
+
+
+<script>
+    $('button').on('click', () => {
+        $('img').animate({
+    opacity: 1, //画像を見えるようにする
+    width: '400px', //画像サイズを大きくする
+     //画像を右方向へ移動させる
+}, 1000);
+});
+$('.popup').hide();
+  
+$('#open').on('click', () => {
+  $('.popup').fadeIn();
+});
+
+$('#close').on('click', () => {
+  $('.popup').fadeOut();
+});
+      
+  </script>
+</body>
+</html>
